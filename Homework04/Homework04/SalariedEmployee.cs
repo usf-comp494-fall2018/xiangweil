@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Written by: Shawn
+using System;
 using System.Collections.Generic;
 using System.Text;
 
