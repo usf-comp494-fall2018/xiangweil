@@ -25,14 +25,22 @@ namespace Midterm_project
                 double.TryParse(rows[i].ToString(), out parametersArray[i]);
                }
                 Calc data = new Calc(parametersArray);
-                data.GetMean(parametersArray, lines);
-                data.GetMedian(parametersArray);
-  
+                double average =  data.GetMean(parametersArray, lines);
+                double median =  data.GetMedian(parametersArray);
+
+                string[] createText = { "The mean of array is : " + average, "The median Of array is : " + median };
+
+                System.IO.File.WriteAllLines(dir+@"\CalcOutput.txt", createText);
+                // path of output file \Midterm_project\Midterm_project\bin\Debug\netcoreapp2.1\..
+
+
             }
             else
             {
                 Console.WriteLine("File not found");
             }
+
+
         }
     }
 }

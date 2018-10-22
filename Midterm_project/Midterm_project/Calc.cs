@@ -26,7 +26,7 @@ namespace Midterm_project
                 sum += arr[i];
             }
             average = sum / size;
-            Console.WriteLine("Average Of Array is : " + average);
+            Console.WriteLine("The mean of array is : " + average);
             return average;
         }
 
@@ -41,7 +41,7 @@ namespace Midterm_project
             int mid = size / 2;
             double median = (size % 2 != 0) ? (double)sortedArr[mid] : ((double)sortedArr[mid] + (double)sortedArr[mid - 1]) / 2;
 
-            Console.WriteLine("Median Of Array is : " + median);
+            Console.WriteLine("The median of array is : " + median);
             return median;
         }
 
