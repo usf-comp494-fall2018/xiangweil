@@ -5,11 +5,11 @@ namespace FinalProjectService.Models
 {
     public partial class ThreeDayForecast
     {
-        public long Id { get; set; }
-        public long Period { get; set; }
-        public string Icon { get; set; }
-        public string Title { get; set; }
-        public string Fcttext { get; set; }
-        public string Lastcheck { get; set; }
+        public long id { get; set; }
+        public long period { get; set; }
+        public string icon { get; set; }
+        public string title { get; set; }
+        public string fcttext { get; set; }
+        public string lastcheck { get; set; }
     }
 }

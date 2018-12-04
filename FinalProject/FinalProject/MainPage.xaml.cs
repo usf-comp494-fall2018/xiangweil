@@ -74,9 +74,9 @@ namespace FinalProject
 
             string response = await client.GetStringAsync(url);
 
-            var data = JsonConvert.DeserializeObject<ThreeDayForecast>(response);
+            var data = JsonConvert.DeserializeObject<List<ThreeDayForecast>>(response);
          
-            ResultTextBlock.Text = data.Fcttext.ToString() + " 'F";
+            ResultTextBlock.Text = data.First().fcttext.ToString() + " 'F";
         }
 
     }
