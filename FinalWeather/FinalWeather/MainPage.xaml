@@ -1,0 +1,105 @@
+﻿<Page
+    x:Class="FinalWeather.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FinalWeather"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:FinalWeather.Models"
+        Loaded="Page_Loaded"
+
+    mc:Ignorable="d">
+
+    <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView ItemsSource="{x:Bind _todaysWeather}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="data:CurrentConditions">
+                    <StackPanel>
+                        -->
+    <!--<Image Name="ResultImage" Height="50" Width="50" Source="{x:Bind weather[].icon}"/>-->
+    <!--
+                        <TextBlock Text="{x:Bind weather}" FontSize="20" Foreground="Green"/>
+                        <TextBlock Text="{x:Bind tempF}" FontSize="20" Foreground="Green"/>
+                        <TextBlock Text="{x:Bind relativeHumidity}"  Foreground="Green"/>
+                        <TextBlock Text="{x:Bind windDir}"  Foreground="Green"/>
+                        <TextBlock Text="{x:Bind windMph}"  Foreground="Green"/>
+                        <TextBlock Text="{x:Bind lastcheck}"  Foreground="Green"/>
+                        <TextBlock Text="{x:Bind observationTime}" Foreground="Green"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Image Name="ResultImage"/>
+    </Grid>-->
+
+    <!--<StackPanel Background="CadetBlue">
+        <Rectangle Fill="{ThemeResource SystemControlAcrylicElementBrush}" />
+
+        <StackPanel  VerticalAlignment="Center">
+                <Image Name="ResultImage" Width="200" Height="200" HorizontalAlignment="Center" />
+                <TextBlock Name="TempTextBlock" FontSize="52" Foreground="White" HorizontalAlignment="Center" />
+                <TextBlock Name="DescriptionTextBlock" FontSize="36" Foreground="White" HorizontalAlignment="Center" />
+                <TextBlock Name="LocationTextBlock" FontSize="24" Foreground="White" HorizontalAlignment="Center" TextWrapping="Wrap" />
+            </StackPanel>
+        </StackPanel>-->
+
+    <Grid Name="mainGrid">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/evening.JPG"/>
+        </Grid.Background>
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Left"/>
+        <Rectangle Fill="{ThemeResource SystemControlAcrylicElementBrush}" />
+
+        <Grid VerticalAlignment="Top" Height="902" Margin="343,0,338,0">
+            <StackPanel Orientation="Vertical" Margin="0">
+                <Grid>
+                    <TextBlock x:Name="currenTempBlock" HorizontalAlignment="Left" Margin="472,0,0,-46"  VerticalAlignment="Bottom" Height="188" Width="202" FontSize="150" Foreground="White" Text="" FontFamily="Gabriola"/>
+                    <!--<TextBlock x:Name="TempTextBlock" HorizontalAlignment="Left" Margin="137,0,-56,257" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="35" Width="279" FontSize="16" Foreground="#FFFEFEFE"/>-->
+                    <!--<Image x:Name="ResultImage" Height="139"  Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142" Margin="26,86,0,0"/>-->
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Height="62" Margin="0,167,22,0" TextWrapping="Wrap" Text="F" VerticalAlignment="Top" Width="94" Foreground="White" FontSize="65" FontFamily="Gabriola" FontStretch="Expanded" TextLineBounds="TrimToBaseline"/>
+                </Grid>
+                <StackPanel Orientation="Horizontal" Height="50" Margin="0,20,0,0">
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" FontSize="26" Text="Weather:" Height="50" Foreground="White" FontFamily="YouYuan" HorizontalAlignment="Center" Width="116"/>
+                    <TextBlock x:Name="currenweatherBlock" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="260" FontSize="27" Foreground="White" FontFamily="YouYuan" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50">
+                    <TextBlock HorizontalAlignment="Center" Height="50" TextWrapping="Wrap" FontSize="26" Text="Humidity:" VerticalAlignment="Center" Width="135" Foreground="White" FontFamily="YouYuan" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="currenHumidiBlock" TextWrapping="Wrap"  FontSize="27" Foreground="White" FontFamily="YouYuan" Height="50" VerticalAlignment="Center" Width="146" HorizontalAlignment="Center"/>
+                    <!--<TextBlock x:Name="currenWDirBlock" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Width="260" FontSize="20" Foreground="White" FontFamily="YouYuan"/>-->
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50">
+                    <TextBlock HorizontalAlignment="Center" Height="50" TextWrapping="Wrap" FontSize="26" Text="Wind:" VerticalAlignment="Center" Width="95" Foreground="White" FontFamily="YouYuan"/>
+                    <TextBlock x:Name="currenMphBlock" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="260" FontSize="27" Foreground="White" FontFamily="YouYuan"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50">
+                    <TextBlock HorizontalAlignment="Center" Height="50" TextWrapping="Wrap" FontSize="26" Text="Last update time:" VerticalAlignment="Center" Width="251" Foreground="White" FontFamily="YouYuan" Margin="0,0,0,0"/>
+                    <TextBlock x:Name="currenTimeBlock" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="260" FontSize="25" Foreground="White" FontFamily="YouYuan"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50">
+                    <TextBlock HorizontalAlignment="Center" Height="50" Margin="50,0,0,0" TextWrapping="Wrap" FontSize="26" Text="" VerticalAlignment="Top" Width="75" Foreground="White" FontFamily="YouYuan"/>
+                    <TextBlock Text=""  HorizontalAlignment="Stretch"  Height="50" Width="408" FontSize="30" Foreground="White" FontFamily="YouYuan"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50">
+                    <!--<TextBlock HorizontalAlignment="Center" Height="50" TextWrapping="Wrap" FontSize="26" Text="" VerticalAlignment="Center" Width="133" Foreground="White" FontFamily="YouYuan"/>-->
+                    <TextBlock x:Name="TitleBlock0" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="260" FontSize="20" Foreground="White" FontFamily="YouYuan"/>
+                    <TextBlock x:Name="TitleBlock1" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="260" FontSize="20" Foreground="White" FontFamily="YouYuan"/>
+                    <TextBlock x:Name="TitleBlock2" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="260" FontSize="20" Foreground="White" FontFamily="YouYuan"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50">
+                    <TextBlock x:Name="DescriptionTextBlock0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="50" Width="260" FontSize="20" Foreground="White" FontFamily="YouYuan"/>
+                    <TextBlock x:Name="DescriptionTextBlock1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="50" Width="260" FontSize="20" Foreground="White" FontFamily="YouYuan"/>
+                    <TextBlock x:Name="DescriptionTextBlock2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="50" Width="260" FontSize="20" Foreground="White" FontFamily="YouYuan"/>
+                    <TextBlock HorizontalAlignment="Center" Height="50" TextWrapping="Wrap" FontSize="26" Text="" VerticalAlignment="Center" Width="132" Foreground="White" FontFamily="YouYuan"/>
+                </StackPanel>
+                <Grid Height="247">
+                    <Image x:Name="ResultImage0" Height="139"  Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142" Margin="28,10,0,0"/>
+                    <Image x:Name="ResultImage1" Height="139"  Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142" Margin="304,10,0,0"/>
+                    <Image x:Name="ResultImage2" Height="139"  Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142" Margin="550,10,0,0"/>
+
+                </Grid>
+
+                <!--<Grid Height="148" Margin="0,0,485,0"/>-->
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
